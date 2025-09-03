@@ -138,3 +138,7 @@ Gym-Member-System/
 3. Commit your changes: `git commit -m 'Add some feature'`
 4. Push to the branch: `git push origin feature-name`
 5. Submit a pull request
+
+[Gym-Membership-Management-System.pptx](https://github.com/user-attachments/files/22107880/Gym-Membership-Management-System.pptx)
+
+
