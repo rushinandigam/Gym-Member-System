@@ -1,4 +1,13 @@
 const express =  require("express");
+const path = require("path");
+const monogoConnect = require("./src/config/db");
+const routes = require("./src/routes/userRoutes");
 const app = express();
-      
+app.use(express.urlencoded({ extended: true }));
+app.use("/uploads", express.static(path.join(path.resolve(), "uploads")));
+const cors = require("cors");
+app.use(express.json());
+monogoConnect();
+app.use(cors());
+app.use("/" , routes);      
 app.listen(5000 , ()=> console.log("server is running at http://localhost:5000/ "));

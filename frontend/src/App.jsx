@@ -1,16 +1,28 @@
 import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Register from './components/Register'
-function App() {
-  const [count, setCount] = useState(0)
+import ViewAllCustomers from './components/ViewAllCustomers';
+import SingleUserPage from './cards/SingleUser';
+import UpdateUser from './components/UpdateUser';
+import Message from './cards/Message';
 
+function App() {
   return (
     <>
-      <Header />
-      <Hero />
-      <Register/>
+      <Router>
+        <Header/>
+        <Routes> 
+          <Route path='/' element = {<Hero/> } /> 
+          <Route path='/register' element  = {<Register/> }  />
+          <Route path='/viewallcustomers' element  = {<ViewAllCustomers/> }  />
+          <Route path="/user" element={<SingleUserPage />} />
+          <Route path="/updateuser" element={<UpdateUser />} />
+          <Route path="/message" element={<Message />} />
+        </Routes>
+      </Router>
     </>
   )
 }
